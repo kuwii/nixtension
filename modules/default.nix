@@ -3,6 +3,7 @@
 {
   imports = [
     ./grub
+    ./pinyin
     ./microsoft-edge
   ];
 }
