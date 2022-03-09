@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./microsoft-edge
+  ];
 }
