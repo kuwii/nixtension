@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./font
     ./grub
     ./kvm
     ./kvm-guest
