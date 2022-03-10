@@ -3,6 +3,7 @@
 {
   imports = [
     ./grub
+    ./kvm-guest
     ./pinyin
     ./microsoft-edge
   ];
