@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./system
-    ./programs
+    ./microsoft-edge
   ];
 }
