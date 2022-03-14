@@ -1,9 +1,9 @@
 {
   beta = import ./browser.nix {
     channel = "beta";
-    version = "99.0.1150.30";
+    version = "99.0.1150.38";
     revision = "1";
-    sha256 = "sha256:0vibyf6xi7czss3dz32knvgiqsch34mcmqi5cggddrb7w36g4avj";
+    sha256 = "sha256:0c2a08y39i7gqs49lbx6zi95nkk00vkisgq023y351dslmd8nhb8";
   };
   dev = import ./browser.nix {
     channel = "dev";
@@ -13,8 +13,8 @@
   };
   stable = import ./browser.nix {
     channel = "stable";
-    version = "99.0.1150.36";
+    version = "99.0.1150.38";
     revision = "1";
-    sha256 = "sha256:1kkp5wsiifm0rb43wh7yf93cs5m8apcb6x77jf9qpd7pgm5mnr5g";
+    sha256 = "sha256:0liajjaq8q5qv1sbf1khpvhagb7fyvmjl981zi5g98r4kjhfm3hr";
   };
 }
