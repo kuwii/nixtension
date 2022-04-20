@@ -7,5 +7,6 @@
     ./kvm
     ./kvm-guest
     ./pinyin
+    ./zsh
   ];
 }
