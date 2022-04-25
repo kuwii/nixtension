@@ -18,7 +18,6 @@ in
     programs.zsh.ohMyZsh.enable = true;
     programs.zsh.ohMyZsh.plugins = [
       "man" "git" "rsync"
-      "zsh-interactive-cd"
     ];
     programs.zsh.ohMyZsh.theme = "ys";
 
