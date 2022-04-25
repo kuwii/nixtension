@@ -16,12 +16,12 @@ in
   config = (mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       binutils
-			wget curl nettools
-			rsync
-			git
-			dmidecode pciutils
-			parted gparted
-			nixos-option
+      wget curl nettools
+      rsync
+      git
+      dmidecode pciutils
+      parted gparted
+      nixos-option
     ];
   });
 }
