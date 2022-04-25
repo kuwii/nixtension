@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  allowUnfree = config.nixpkgs.config.allowUnfree;
+  allowUnfree = config.nixpkgs.config.allowUnfree or false;
   cfg = config.nixt.programs.compression;
   inherit (lib) mkIf mkMerge mkOption types;
 in
