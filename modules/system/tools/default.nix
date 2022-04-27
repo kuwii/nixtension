@@ -14,6 +14,7 @@ in
   };
 
   config = (mkIf cfg.enable {
+    networking.networkmanager.enable = true;
     environment.systemPackages = with pkgs; [
       binutils
       wget curl nettools
