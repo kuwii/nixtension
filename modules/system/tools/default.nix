@@ -17,10 +17,11 @@ in
     networking.networkmanager.enable = true;
     environment.systemPackages = with pkgs; [
       binutils
+      feh
       wget curl nettools
       rsync
       git
-      dmidecode pciutils
+      dmidecode pciutils hwinfo
       parted gparted
       nixos-option
     ];
