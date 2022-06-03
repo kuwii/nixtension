@@ -1,15 +1,15 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.zsh;
+  cfg = config.nixtension.system.zsh;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.zsh = {
+  options.nixtension.system.zsh = {
     enable = mkOption {
       type = types.bool;
       default = false;
-      description = "Enable Nixt Zsh support, including Zsh, Oh My Zsh and some useful plugins and settings.";
+      description = "Enable Nixtension Zsh support, including Zsh, Oh My Zsh and some useful plugins and settings.";
     };
   };
 

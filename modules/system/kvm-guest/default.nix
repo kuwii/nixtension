@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.kvm-guest;
+  cfg = config.nixtension.system.kvm-guest;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.kvm-guest = {
+  options.nixtension.system.kvm-guest = {
     enable = mkOption {
       type = types.bool;
       default = false;

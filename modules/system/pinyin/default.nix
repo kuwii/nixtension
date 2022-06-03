@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.pinyin;
+  cfg = config.nixtension.system.pinyin;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.pinyin = {
+  options.nixtension.system.pinyin = {
     enable = mkOption {
       type = types.bool;
       default = false;

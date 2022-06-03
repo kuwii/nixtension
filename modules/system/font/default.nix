@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.font;
+  cfg = config.nixtension.system.font;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.font = {
+  options.nixtension.system.font = {
     enable = mkOption {
       type = types.bool;
       default = false;

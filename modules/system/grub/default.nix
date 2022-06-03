@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.grub;
+  cfg = config.nixtension.system.grub;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.grub = {
+  options.nixtension.system.grub = {
     enable = mkOption {
       type = types.bool;
       default = false;

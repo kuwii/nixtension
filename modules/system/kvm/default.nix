@@ -1,15 +1,15 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixt.system.kvm;
+  cfg = config.nixtension.system.kvm;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.system.kvm = {
+  options.nixtension.system.kvm = {
     enable = mkOption {
       type = types.bool;
       default = false;
-      description = "Enable Nixt KVM support, including QEMU, libvirtd, virt-manager and other utils.";
+      description = "Enable Nixtension KVM support, including QEMU, libvirtd, virt-manager and other utils.";
     };
   };
 

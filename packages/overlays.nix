@@ -1,3 +1,3 @@
 [(final: prev: {
-  nixt = { };
+  nixtension = { };
 })]

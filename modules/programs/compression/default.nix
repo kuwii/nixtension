@@ -2,11 +2,11 @@
 
 let
   allowUnfree = config.nixpkgs.config.allowUnfree or false;
-  cfg = config.nixt.programs.compression;
+  cfg = config.nixtension.programs.compression;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixt.programs.compression = {
+  options.nixtension.programs.compression = {
     enable = mkOption {
       type = types.bool;
       default = false;
