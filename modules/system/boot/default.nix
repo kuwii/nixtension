@@ -1,15 +1,15 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixtension.system.grub;
+  cfg = config.nixtension.system.boot;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
-  options.nixtension.system.grub = {
+  options.nixtension.system.boot = {
     enable = mkOption {
       type = types.bool;
       default = false;
-      description = "Use GRUB as the bootloader. Currently only EFI is supported.";
+      description = "Use Nixtension bootloader configurations based on GRUB. Currently only EFI is supported.";
     };
     mountPoint = mkOption {
       type = types.str;

@@ -2,8 +2,8 @@
 
 {
   imports = [
+    ./boot
     ./font
-    ./grub
     ./kvm
     ./kvm-guest
     ./pinyin
