@@ -17,7 +17,7 @@ in
     virtualisation.libvirtd.enable = true;
     virtualisation.libvirtd.qemu.swtpm.enable = true;
     virtualisation.libvirtd.qemu.ovmf.enable = true;
-    virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull ];
+    virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
     services.spice-vdagentd.enable = true;
 
     environment.systemPackages = with pkgs; [
