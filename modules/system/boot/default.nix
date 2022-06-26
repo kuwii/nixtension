@@ -11,15 +11,15 @@ in
       default = false;
       description = "Use Nixtension bootloader configurations based on GRUB. Currently only EFI is supported.";
     };
+    enable-bootscreen = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable bootscreen based on Plymouth.";
+    };
     mountPoint = mkOption {
       type = types.str;
       default = "/boot/efi";
       description = "Location of the mounted EFI partition.";
-    };
-    bootscreen.enable = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Enable bootscreen based on Plymouth.";
     };
   };
 
@@ -32,7 +32,7 @@ in
       boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
     })
-    (mkIf (cfg.enable && cfg.bootscreen.enable) {
+    (mkIf (cfg.enable && cfg.enable-bootscreen) {
       boot.plymouth.enable = true;
     })
   ];
