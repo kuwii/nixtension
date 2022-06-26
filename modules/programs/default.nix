@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./compression
+    ./compression-software
     ./neovim
   ];
 }
