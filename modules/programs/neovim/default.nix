@@ -11,26 +11,44 @@ in
       default = false;
       description = "Install Neovim with recommended plugins.";
     };
-  };
 
-  config = (mkIf cfg.enable {
-    programs.neovim.enable = true;
-
-    programs.neovim.defaultEditor = true;
-
-    programs.neovim.viAlias = true;
-    programs.neovim.vimAlias = true;
-
-    programs.neovim.withPython3 = true;
-    programs.neovim.withNodeJs = true;
-    programs.neovim.withRuby = true;
-
-    programs.neovim.configure = {
-      packages.myVimPackage = import ./plugins.nix { inherit pkgs; };
+    enable-nix = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Install plugins that provide Nix support.";
     };
 
-    environment.systemPackages = with pkgs; [
-      xclip wl-clipboard
-    ];
-  });
+    plugins = mkOption {
+      type = types.listOf types.package;
+      default = [];
+      description = "Plugins to install.";
+    };
+  };
+
+  config = mkMerge [
+    (mkIf cfg.enable {
+      programs.neovim.enable = true;
+
+      programs.neovim.defaultEditor = true;
+
+      programs.neovim.viAlias = true;
+      programs.neovim.vimAlias = true;
+
+      programs.neovim.withPython3 = true;
+      programs.neovim.withNodeJs = true;
+      programs.neovim.withRuby = true;
+
+      programs.neovim.configure = {
+        packages.myVimPackage = {
+          start = cfg.plugins;
+        };
+      };
+
+      environment.systemPackages = with pkgs; [
+        xclip wl-clipboard
+      ];
+    })
+
+    (mkIf (cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
+  ];
 }
