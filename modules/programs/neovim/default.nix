@@ -12,6 +12,12 @@ in
       description = "Install Neovim with recommended plugins.";
     };
 
+    enable-explorer = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Install plugins that provide file explorer feature.";
+    };
+
     enable-nix = mkOption {
       type = types.bool;
       default = true;
@@ -22,6 +28,12 @@ in
       type = types.listOf types.package;
       default = [];
       description = "Plugins to install.";
+    };
+
+    vimrc = mkOption {
+      type = types.lines;
+      default = "";
+      description = "Vimrc of neovim.";
     };
   };
 
@@ -42,6 +54,7 @@ in
         packages.myVimPackage = {
           start = cfg.plugins;
         };
+        customRC = cfg.vimrc;
       };
 
       environment.systemPackages = with pkgs; [
@@ -49,6 +62,7 @@ in
       ];
     })
 
+    (mkIf (cfg.enable-explorer) (import ./features/explorer { inherit pkgs; }))
     (mkIf (cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
   ];
 }
