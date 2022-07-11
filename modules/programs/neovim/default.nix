@@ -12,6 +12,12 @@ in
       description = "Install Neovim with recommended plugins.";
     };
 
+    enable-basic-settings = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable basic recommended settings.";
+    };
+
     enable-explorer = mkOption {
       type = types.bool;
       default = true;
@@ -62,6 +68,7 @@ in
       ];
     })
 
+    (mkIf (cfg.enable-basic-settings) (import ./features/basic-settings { }))
     (mkIf (cfg.enable-explorer) (import ./features/explorer { inherit pkgs; }))
     (mkIf (cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
   ];
