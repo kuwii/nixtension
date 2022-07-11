@@ -30,6 +30,12 @@ in
       description = "Install plugins that provide Nix support.";
     };
 
+    enable-status-bar = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Install plugins that provide status bar feature.";
+    };
+
     plugins = mkOption {
       type = types.listOf types.package;
       default = [];
@@ -71,5 +77,6 @@ in
     (mkIf (cfg.enable-basic-settings) (import ./features/basic-settings { }))
     (mkIf (cfg.enable-explorer) (import ./features/explorer { inherit pkgs; }))
     (mkIf (cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
+    (mkIf (cfg.enable-status-bar) (import ./features/status-bar { inherit pkgs; }))
   ];
 }
