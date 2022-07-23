@@ -24,6 +24,7 @@ in
       dmidecode pciutils hwinfo
       parted gparted
       nixos-option
+      neofetch
     ];
   });
 }
