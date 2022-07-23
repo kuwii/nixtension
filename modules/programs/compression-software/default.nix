@@ -17,7 +17,7 @@ in
   config = mkMerge [
     (mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
-        unzip libsForQt5.ark p7zip
+        unzip libsForQt5.ark p7zip ouch
       ];
     })
     (mkIf (allowUnfree && cfg.enable) {
