@@ -74,9 +74,9 @@ in
       ];
     })
 
-    (mkIf (cfg.enable-basic-settings) (import ./features/basic-settings { }))
-    (mkIf (cfg.enable-explorer) (import ./features/explorer { inherit pkgs; }))
-    (mkIf (cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
-    (mkIf (cfg.enable-status-bar) (import ./features/status-bar { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.enable-basic-settings) (import ./features/basic-settings { }))
+    (mkIf (cfg.enable && cfg.enable-explorer) (import ./features/explorer { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.enable-nix) (import ./features/nix { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.enable-status-bar) (import ./features/status-bar { inherit pkgs; }))
   ];
 }
