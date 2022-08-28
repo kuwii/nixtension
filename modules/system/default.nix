@@ -7,6 +7,7 @@
     ./kvm
     ./kvm-guest
     ./pinyin
+    ./sound
     ./tools
     ./zsh
   ];
