@@ -42,12 +42,6 @@ in
       description = "Install Hack font.";
     };
 
-    enable-iosevka = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Install Iosevka font.";
-    };
-
     enable-ipafont = mkOption {
       type = types.bool;
       default = true;
@@ -113,12 +107,6 @@ in
     (mkIf (cfg.enable && cfg.enable-hack) {
       fonts.fonts = with pkgs; [
         hack-font
-      ];
-    })
-
-    (mkIf (cfg.enable && cfg.enable-iosevka) {
-      fonts.fonts = with pkgs; [
-        iosevka
       ];
     })
 
