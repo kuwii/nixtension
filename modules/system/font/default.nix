@@ -77,6 +77,12 @@ in
       default = true;
       description = "Install Source Han fonts.";
     };
+
+    enable-wqy = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Install Wen Quan Yi fonts.";
+    };
   };
 
   config = mkMerge [
@@ -143,6 +149,12 @@ in
     (mkIf (cfg.enable && cfg.enable-source-han) {
       fonts.fonts = with pkgs; [
         source-han-sans source-han-mono source-han-serif
+      ];
+    })
+
+    (mkIf (cfg.enable && cfg.enable-wqy) {
+      fonts.fonts = with pkgs; [
+        wqy_zenhei wqy_microhei
       ];
     })
   ];
