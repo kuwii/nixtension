@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.nixtension.system.tools;
+  cfg = config.nixtension.system.sound;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
