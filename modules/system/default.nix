@@ -3,6 +3,7 @@
 {
   imports = [
     ./boot
+    ./clash
     ./font
     ./kvm
     ./kvm-guest
