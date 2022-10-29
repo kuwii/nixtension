@@ -2,19 +2,24 @@
 
 let
   cfg = config.nixtension.system.boot;
-  inherit (lib) mkIf mkMerge mkOption types;
+  inherit (lib) assertMsg mkIf mkMerge mkOption types;
 in
 {
   options.nixtension.system.boot = {
     enable = mkOption {
       type = types.bool;
       default = false;
-      description = "Use Nixtension bootloader configurations based on GRUB. Currently only EFI is supported.";
+      description = "Use Nixtension bootloader configurations based on systemd-boot. Currently only EFI is supported.";
     };
     enable-bootscreen = mkOption {
       type = types.bool;
       default = true;
       description = "Enable bootscreen based on Plymouth.";
+    };
+    enable-grub = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Use GNU GRUB as bootloader, instead of systemd-boot.";
     };
     mountPoint = mkOption {
       type = types.str;
@@ -24,7 +29,12 @@ in
   };
 
   config = mkMerge [
-    (mkIf cfg.enable {
+    (mkIf (cfg.enable && !cfg.enable-grub) {
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
+    })
+    (mkIf (cfg.enable && cfg.enable-grub) {
       boot.loader.grub.enable = true;
       boot.loader.grub.version = 2;
       boot.loader.grub.efiSupport = true;
