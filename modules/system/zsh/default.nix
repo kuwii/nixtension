@@ -11,20 +11,37 @@ in
       default = false;
       description = "Enable Nixtension Zsh support, including Zsh, Oh My Zsh and some useful plugins and settings.";
     };
+    enable-vi-mode = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable vi mode support.";
+    };
   };
 
-  config = (mkIf cfg.enable {
-    programs.zsh.enable = true;
-    programs.zsh.ohMyZsh.enable = true;
-    programs.zsh.ohMyZsh.plugins = [
-      "man" "git" "rsync"
-    ];
-    programs.zsh.ohMyZsh.theme = "ys";
+  config = mkMerge [
+    (mkIf cfg.enable {
+      programs.zsh.enable = true;
+      programs.zsh.enableCompletion = true;
+      programs.zsh.enableGlobalCompInit = true;
 
-    users.defaultUserShell = pkgs.zsh;
+      programs.zsh.ohMyZsh.enable = true;
+      programs.zsh.ohMyZsh.theme = "ys";
+      programs.zsh.ohMyZsh.plugins = [
+        "man" "git" "rsync"
+      ];
 
-    environment.systemPackages = with pkgs; [
-      fzf
-    ];
-  });
+      users.defaultUserShell = pkgs.zsh;
+      environment.systemPackages = with pkgs; [
+        fzf
+      ];
+    })
+    (mkIf (cfg.enable && cfg.enable-vi-mode) {
+      programs.zsh.ohMyZsh.plugins = [ "vi-mode" ];
+      programs.zsh.setOptions = [ "VI" ];
+      programs.zsh.interactiveShellInit = ''
+        export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true;
+        export VI_MODE_SET_CURSOR=true;
+      '';
+    })
+  ];
 }
