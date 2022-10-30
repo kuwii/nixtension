@@ -12,135 +12,157 @@ in
       description = "Install some common fonts.";
     };
 
-    enable-arphic = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Arphic fonts.";
+    arphic = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Arphic fonts.";
+      };
     };
 
-    enable-cascadia-code = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Cascadia Code font.";
+    cascadia-code = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Cascadia Code font.";
+      };
     };
 
-    enable-dejavu-fonts = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Dejavu Fonts.";
+    dejavu-fonts = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Dejavu Fonts.";
+      };
     };
 
-    enable-freefont = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install GNU Free Font.";
+    freefont = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install GNU Free Font.";
+      };
     };
 
-    enable-hack = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Hack font.";
+    hack = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Hack font.";
+      };
     };
 
-    enable-ipafont = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install IPAfont.";
+    ipafont = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install IPAfont.";
+      };
     };
 
-    enable-nerdfonts = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Nerd Fonts.";
+    nerdfonts = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Nerd Fonts.";
+      };
     };
 
-    enable-noto-fonts = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Noto Fonts.";
+    noto-fonts = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Noto Fonts.";
+      };
     };
 
-    enable-source-code-pro = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Source Code Pro font.";
+    source-code-pro = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Source Code Pro font.";
+      };
     };
 
-    enable-source-han = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Source Han fonts.";
+    source-han = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Source Han fonts.";
+      };
     };
 
-    enable-wqy = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Install Wen Quan Yi fonts.";
+    wqy = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install Wen Quan Yi fonts.";
+      };
     };
   };
 
   config = mkMerge [
-    (mkIf (cfg.enable && cfg.enable-arphic) {
+    (mkIf (cfg.enable && cfg.arphic.enable) {
       fonts.fonts = with pkgs; [
         arphic-ukai arphic-uming
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-cascadia-code) {
+    (mkIf (cfg.enable && cfg.cascadia-code.enable) {
       fonts.fonts = with pkgs; [
         cascadia-code
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-dejavu-fonts) {
+    (mkIf (cfg.enable && cfg.dejavu-fonts.enable) {
       fonts.fonts = with pkgs; [
         dejavu_fonts
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-freefont) {
+    (mkIf (cfg.enable && cfg.freefont.enable) {
       fonts.fonts = with pkgs; [
         freefont_ttf
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-hack) {
+    (mkIf (cfg.enable && cfg.hack.enable) {
       fonts.fonts = with pkgs; [
         hack-font
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-ipafont) {
+    (mkIf (cfg.enable && cfg.ipafont.enable) {
       fonts.fonts = with pkgs; [
         ipafont
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-nerdfonts) {
+    (mkIf (cfg.enable && cfg.nerdfonts.enable) {
       fonts.fonts = with pkgs; [
         nerdfonts
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-noto-fonts) {
+    (mkIf (cfg.enable && cfg.noto-fonts.enable) {
       fonts.fonts = with pkgs; [
         noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-source-code-pro) {
+    (mkIf (cfg.enable && cfg.source-code-pro.enable) {
       fonts.fonts = with pkgs; [
         source-code-pro
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-source-han) {
+    (mkIf (cfg.enable && cfg.source-han.enable) {
       fonts.fonts = with pkgs; [
         source-han-sans source-han-mono source-han-serif
       ];
     })
 
-    (mkIf (cfg.enable && cfg.enable-wqy) {
+    (mkIf (cfg.enable && cfg.wqy.enable) {
       fonts.fonts = with pkgs; [
         wqy_zenhei wqy_microhei
       ];

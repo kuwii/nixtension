@@ -11,10 +11,12 @@ in
       default = false;
       description = "Enable Nixtension Zsh support, including Zsh, Oh My Zsh and some useful plugins and settings.";
     };
-    enable-vi-mode = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable vi mode support.";
+    vi-mode = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable vi mode support.";
+      };
     };
   };
 
@@ -35,7 +37,7 @@ in
         fzf
       ];
     })
-    (mkIf (cfg.enable && cfg.enable-vi-mode) {
+    (mkIf (cfg.enable && cfg.vi-mode.enable) {
       programs.zsh.ohMyZsh.plugins = [ "vi-mode" ];
       programs.zsh.setOptions = [ "VI" ];
       programs.zsh.interactiveShellInit = ''

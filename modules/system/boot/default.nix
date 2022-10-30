@@ -11,15 +11,19 @@ in
       default = false;
       description = "Use Nixtension bootloader configurations based on systemd-boot. Currently only EFI is supported.";
     };
-    enable-bootscreen = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Enable bootscreen based on Plymouth.";
+    bootscreen = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Enable bootscreen based on Plymouth.";
+      };
     };
-    enable-grub = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Use GNU GRUB as bootloader, instead of systemd-boot.";
+    grub = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Use GNU GRUB as bootloader, instead of systemd-boot.";
+      };
     };
     mountPoint = mkOption {
       type = types.str;
@@ -29,12 +33,12 @@ in
   };
 
   config = mkMerge [
-    (mkIf (cfg.enable && !cfg.enable-grub) {
+    (mkIf (cfg.enable && !cfg.grub.enable) {
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
     })
-    (mkIf (cfg.enable && cfg.enable-grub) {
+    (mkIf (cfg.enable && cfg.grub.enable) {
       boot.loader.grub.enable = true;
       boot.loader.grub.version = 2;
       boot.loader.grub.efiSupport = true;
@@ -42,7 +46,7 @@ in
       boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
     })
-    (mkIf (cfg.enable && cfg.enable-bootscreen) {
+    (mkIf (cfg.enable && cfg.bootscreen.enable) {
       boot.plymouth.enable = true;
     })
   ];

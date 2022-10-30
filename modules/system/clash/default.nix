@@ -11,15 +11,17 @@ in
       default = false;
       description = "Install and enable Clash service.";
     };
+    auto-start = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Auto start clash service.";
+      };
+    };
     config-dir = mkOption {
       type = types.str;
       default = "/root/.config/clash";
       description = "Configuration directory of Clash.";
-    };
-    auto-start = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Auto start clash service.";
     };
   };
 
@@ -30,7 +32,7 @@ in
     ];
     # setup systemd service
     systemd.services.clash = {
-      enable = cfg.auto-start;
+      enable = cfg.auto-start.enable;
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
       description = "Clash service.";
