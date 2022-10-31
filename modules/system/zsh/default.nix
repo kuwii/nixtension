@@ -23,8 +23,14 @@ in
   config = mkMerge [
     (mkIf cfg.enable {
       programs.zsh.enable = true;
+
       programs.zsh.enableCompletion = true;
+      programs.zsh.enableBashCompletion = true;
       programs.zsh.enableGlobalCompInit = true;
+
+      programs.zsh.autosuggestions.enable = true;
+      programs.zsh.autosuggestions.async = true;
+      programs.zsh.autosuggestions.strategy = ["history" "completion"];
 
       programs.zsh.ohMyZsh.enable = true;
       programs.zsh.ohMyZsh.theme = "ys";
