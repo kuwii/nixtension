@@ -4,6 +4,7 @@
   imports = [
     ./boot
     ./clash
+    ./cn-support
     ./font
     ./hardware-tools
     ./kvm
