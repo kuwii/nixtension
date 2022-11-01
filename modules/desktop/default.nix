@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./desktop
-    ./system
-    ./programs
+    ./gnome
   ];
 }
