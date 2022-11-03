@@ -23,6 +23,7 @@ in
       git
       nixos-option
       neofetch
+      tree
     ];
   });
 }
