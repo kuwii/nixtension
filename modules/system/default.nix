@@ -13,6 +13,7 @@
     ./pinyin
     ./sound
     ./tools
+    ./windows-time
     ./zsh
   ];
 }
