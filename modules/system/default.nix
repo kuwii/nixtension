@@ -9,6 +9,7 @@
     ./hardware-tools
     ./kvm
     ./kvm-guest
+    ./openssh
     ./pinyin
     ./sound
     ./tools
