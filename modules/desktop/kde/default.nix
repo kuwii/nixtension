@@ -29,10 +29,12 @@ in
       # setup touchpad
       services.xserver.libinput.enable = true;
       services.xserver.libinput.touchpad.tapping = true;
-      # install some useful packages & extensions
+      # enable some useful features
+      hardware.bluetooth.enable = true;
       networking.networkmanager.enable = true;
       programs.dconf.enable = true;
       programs.xwayland.enable = true;
+      # install some useful packages & extensions
       environment.systemPackages = with pkgs; [
         libsForQt5.ark
         libsForQt5.discover
