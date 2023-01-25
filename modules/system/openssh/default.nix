@@ -24,6 +24,6 @@ in
     services.openssh.enable = true;
     services.openssh.forwardX11 = true;
     services.openssh.allowSFTP = true;
-    services.openssh.passwordAuthentication = cfg.password-auth.enable;
+    services.openssh.settings.PasswordAuthentication = cfg.password-auth.enable;
   });
 }
