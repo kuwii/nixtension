@@ -14,7 +14,7 @@ in
   };
 
   config = (mkIf cfg.enable {
-    i18n.inputMethod.enabled = "fcitx";
-    i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ libpinyin ];
+    i18n.inputMethod.enabled = "fcitx5";
+    i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-gtk fcitx5-chinese-addons ];
   });
 }
