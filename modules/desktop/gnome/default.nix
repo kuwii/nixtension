@@ -48,6 +48,7 @@ in
         gnome.adwaita-icon-theme
         gnomeExtensions.simple-system-monitor
         gnomeExtensions.material-shell
+        gnomeExtensions.blur-my-shell
         gnome.gnome-tweaks
       ];
     })
