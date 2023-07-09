@@ -33,6 +33,9 @@ in
   };
 
   config = mkMerge [
+    (mkIf (cfg.enable) {
+      boot.initrd.systemd.enable = true;
+    })
     (mkIf (cfg.enable && !cfg.grub.enable) {
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
@@ -40,10 +43,10 @@ in
     })
     (mkIf (cfg.enable && cfg.grub.enable) {
       boot.loader.grub.enable = true;
-      boot.loader.grub.version = 2;
       boot.loader.grub.efiSupport = true;
       boot.loader.grub.device = "nodev";
       boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.grub.enableCryptodisk = true;
       boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
     })
     (mkIf (cfg.enable && cfg.bootscreen.enable) {
