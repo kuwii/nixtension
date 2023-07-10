@@ -17,25 +17,18 @@ in
 
       programs.neovim.viAlias = true;
       programs.neovim.vimAlias = true;
+      programs.neovim.vimdiffAlias = true;
 
       programs.neovim.withPython3 = true;
       programs.neovim.withNodeJs = true;
       programs.neovim.withRuby = true;
 
-      programs.neovim.configure = {
-        packages.myVimPackage = {
-          start = cfg.plugins;
-        };
-        customRC = cfg.vimrc;
-      };
-
-      environment.systemPackages = with pkgs; [
-        xclip wl-clipboard
-      ];
+      programs.neovim.plugins = cfg.plugins;
+      programs.neovim.extraConfig = cfg.vimrc;
     })
 
     (mkIf (cfg.enable && cfg.basic-settings.enable) (import ./features/basic-settings { }))
-    (mkIf (cfg.enable && cfg.explorer.enable) (import ./features/explorer { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.explorer.enable) (import ./features/explorer/home.nix { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.status-bar.enable) (import ./features/status-bar { inherit pkgs; }))
   ];
