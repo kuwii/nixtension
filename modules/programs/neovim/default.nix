@@ -38,5 +38,6 @@ in
     (mkIf (cfg.enable && cfg.explorer.enable) (import ./features/explorer { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.status-bar.enable) (import ./features/status-bar { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.status-bar.enable) (import ./features/current-word { inherit pkgs; }))
   ];
 }

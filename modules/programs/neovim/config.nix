@@ -44,6 +44,14 @@ in
       };
     };
 
+    current-word = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install plugins that highlight current word.";
+      };
+    };
+
     plugins = mkOption {
       type = types.listOf types.package;
       default = [];
