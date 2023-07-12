@@ -52,6 +52,14 @@ in
       };
     };
 
+    terminal = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Install plugins that provides terminal related features.";
+      };
+    };
+
     plugins = mkOption {
       type = types.listOf types.package;
       default = [];
