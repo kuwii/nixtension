@@ -58,6 +58,11 @@ in
         default = true;
         description = "Install plugins that provides terminal related features.";
       };
+      direction = mkOption {
+        type = types.str;
+        default = "horizontal";
+        description = "Where to pop-up terminal. Can be `vertical`, `horizontal`, `tab`, `float`.";
+      };
     };
 
     plugins = mkOption {
