@@ -12,6 +12,7 @@ in
     ./features/terminal/config.nix
     ./features/current-word/config.nix
     ./features/nix/config.nix
+    ./features/markdown/config.nix
   ];
 
   options.nixtension.programs.neovim = {
