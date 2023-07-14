@@ -9,6 +9,7 @@ in
     ./features/basic-settings/config.nix
     ./features/status-bar/config.nix
     ./features/explorer/config.nix
+    ./features/fuzzy-finder/config.nix
     ./features/terminal/config.nix
     ./features/current-word/config.nix
     ./features/nix/config.nix
