@@ -6,6 +6,7 @@ let
 in
 {
   imports = [
+    # basic features
     ./features/basic-settings/config.nix
     ./features/status-bar/config.nix
     ./features/explorer/config.nix
@@ -13,6 +14,8 @@ in
     ./features/terminal/config.nix
     ./features/current-word/config.nix
     ./features/markdown/config.nix
+    # language supports
+    ./features/nvim-lspconfig/config.nix
     ./features/nix-support/config.nix
   ];
 

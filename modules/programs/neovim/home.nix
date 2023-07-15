@@ -36,6 +36,7 @@ in
     (mkIf (cfg.enable && cfg.terminal.enable) (import ./features/terminal { inherit pkgs config; }))
     (mkIf (cfg.enable && cfg.markdown.enable) (import ./features/markdown { inherit pkgs; }))
     # language supports
+    (mkIf (cfg.enable && cfg.nvim-lspconfig.enable) (import ./features/nvim-lspconfig { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix-support { inherit pkgs; }))
   ];
 }
