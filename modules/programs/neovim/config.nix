@@ -12,8 +12,8 @@ in
     ./features/fuzzy-finder/config.nix
     ./features/terminal/config.nix
     ./features/current-word/config.nix
-    ./features/nix/config.nix
     ./features/markdown/config.nix
+    ./features/nix-support/config.nix
   ];
 
   options.nixtension.programs.neovim = {

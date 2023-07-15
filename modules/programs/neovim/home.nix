@@ -27,13 +27,15 @@ in
       programs.neovim.extraConfig = cfg.vimrc;
     })
 
+    # basic features
     (mkIf (cfg.enable && cfg.basic-settings.enable) (import ./features/basic-settings { }))
     (mkIf (cfg.enable && cfg.explorer.enable) (import ./features/explorer/home.nix { inherit pkgs; }))
-    (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.status-bar.enable) (import ./features/status-bar { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.current-word.enable) (import ./features/current-word { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.fuzzy-finder.enable) (import ./features/fuzzy-finder/home.nix { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.terminal.enable) (import ./features/terminal { inherit pkgs config; }))
     (mkIf (cfg.enable && cfg.markdown.enable) (import ./features/markdown { inherit pkgs; }))
+    # language supports
+    (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix-support { inherit pkgs; }))
   ];
 }
