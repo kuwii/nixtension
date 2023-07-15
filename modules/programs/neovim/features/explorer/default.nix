@@ -7,7 +7,7 @@
   init-vim = builtins.readFile ./vimrc.vim;
   init-lua = builtins.readFile ./init.lua;
 }) // {
-  environment.systemPackages = with pkgs; [
+  fonts.fonts = with pkgs; [
     nerdfonts
   ];
 }
