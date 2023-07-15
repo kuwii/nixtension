@@ -4,8 +4,8 @@
   plugins = with pkgs.vimPlugins; [
     nvim-tree-lua nvim-web-devicons
   ];
-  vimrc = builtins.readFile ./vimrc.vim;
-  initLua = builtins.readFile ./init.lua;
+  init-vim = builtins.readFile ./vimrc.vim;
+  init-lua = builtins.readFile ./init.lua;
 }) // {
   environment.systemPackages = with pkgs; [
     nerdfonts

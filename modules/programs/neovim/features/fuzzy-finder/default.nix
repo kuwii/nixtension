@@ -6,7 +6,7 @@
     telescope-nvim
     telescope-fzf-native-nvim
   ];
-  initLua = builtins.readFile ./init.lua;
+  init-lua = builtins.readFile ./init.lua;
 }) // {
   environment.systemPackages = with pkgs; [
     ripgrep fd

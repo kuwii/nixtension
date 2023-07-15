@@ -9,6 +9,6 @@ let
 in
 (import ../build-feature.nix {
   plugins = with pkgs.vimPlugins; [ toggleterm-nvim ];
-  vimrc = builtins.readFile ./vimrc.vim;
-  initLua = withConfig (builtins.readFile ./init.lua);
+  init-vim = builtins.readFile ./vimrc.vim;
+  init-lua = withConfig (builtins.readFile ./init.lua);
 })

@@ -1,6 +1,7 @@
-{ plugins ? [], vimrc ? "", initLua ? "" }:
+{ plugins ? [], init-vim ? "", init-lua ? "" }:
 
 {
   nixtension.programs.neovim.plugins = plugins;
-  nixtension.programs.neovim.vimrc = "lua << EOF\n" + initLua + "\nEOF\n" + vimrc;
+  nixtension.programs.neovim.init-vim = init-vim;
+  nixtension.programs.neovim.init-lua = init-lua;
 }

@@ -6,5 +6,5 @@
     vimPlugins.telescope-nvim
     vimPlugins.telescope-fzf-native-nvim
   ];
-  initLua = builtins.readFile ./init.lua;
+  init-lua = builtins.readFile ./init.lua;
 })

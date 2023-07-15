@@ -5,5 +5,5 @@
     markdown-preview-nvim
     vim-markdown
   ];
-  vimrc = builtins.readFile ./vimrc.vim;
+  init-vim = builtins.readFile ./vimrc.vim;
 })

@@ -29,10 +29,16 @@ in
       description = "Plugins to install.";
     };
 
-    vimrc = mkOption {
+    init-vim = mkOption {
       type = types.lines;
       default = "";
-      description = "Vimrc of neovim.";
+      description = "init.vim of Neovim.";
+    };
+
+    init-lua = mkOption {
+      type = types.lines;
+      default = "";
+      description = "init.lua of Neovim.";
     };
   };
 }

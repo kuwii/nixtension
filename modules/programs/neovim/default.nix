@@ -2,6 +2,8 @@
 
 let
   cfg = config.nixtension.programs.neovim;
+  initVim = cfg.init-vim;
+  initLua = cfg.init-lua;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
@@ -26,7 +28,7 @@ in
         packages.myVimPackage = {
           start = cfg.plugins;
         };
-        customRC = cfg.vimrc;
+        customRC = "lua << EOF\n" + initLua + "\nEOF\n" + initVim;
       };
 
       environment.systemPackages = with pkgs; [
