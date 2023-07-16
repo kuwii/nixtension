@@ -3,5 +3,6 @@
 {
   imports = [
     ./packages
+    ./fonts
   ];
 }
