@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./config
     ./desktop
     ./system
     ./programs
