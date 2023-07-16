@@ -3,7 +3,6 @@
 let
   allowUnfree = config.nixpkgs.config.allowUnfree or false;
   cfg = config.nixtension.programs.compression-software;
-  enablePlasma = config.services.xserver.desktopManager.plasma5.enable;
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
@@ -17,18 +16,13 @@ in
 
   config = mkMerge [
     (mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [
+      nixtension.config.packages = with pkgs; [
         unzip p7zip ouch
       ];
     })
     (mkIf (allowUnfree && cfg.enable) {
-      environment.systemPackages = with pkgs; [
+      nixtension.config.packages = with pkgs; [
         unrar
-      ];
-    })
-    (mkIf enablePlasma {
-      environment.systemPackages = with pkgs; [
-        libsForQt5.ark
       ];
     })
   ];

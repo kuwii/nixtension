@@ -16,11 +16,11 @@ in
   config = mkMerge [
     (mkIf cfg.enable {
       # install the software
-      environment.systemPackages = with pkgs; [
+      nixtension.config.packages = with pkgs; [
         joplin joplin-desktop
       ];
       # install necessary fonts for displaying chinese
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         wqy_zenhei wqy_microhei
       ];
     })
