@@ -17,6 +17,7 @@ in
     ./features/markdown/config.nix
     # language supports
     ./features/nvim-lspconfig/config.nix
+    ./features/lua-support/config.nix
     ./features/nix-support/config.nix
   ];
 
