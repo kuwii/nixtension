@@ -5,7 +5,7 @@ lib.mkMerge [
     plugins = with pkgs.vimPlugins; [
       nvim-tree-lua nvim-web-devicons
     ];
-    init-vim = builtins.readFile ./vimrc.vim;
+    init-vim = builtins.readFile ./init.vim;
     init-lua = builtins.readFile ./init.lua;
   })
   ({

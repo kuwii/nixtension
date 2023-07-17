@@ -1,5 +1,5 @@
 { }:
 
 (import ../build-feature.nix {
-  init-vim = builtins.readFile ./vimrc.vim;
+  init-vim = builtins.readFile ./init.vim;
 })
