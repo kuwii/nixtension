@@ -8,7 +8,7 @@ in
   imports = [ ./config.nix ];
 
   config = mkMerge [
-    (mkIf cfg != [] {
+    (mkIf (cfg != []) {
       fonts.fontconfig.enable = true;
     })
     ({
