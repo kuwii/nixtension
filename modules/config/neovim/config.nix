@@ -5,6 +5,36 @@ let
 in
 {
   options.nixtension.config.neovim = {
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Whether to enable Neovim.";
+    };
+
+    defaultEditor = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Set Neovim as default editor.";
+    };
+
+    withPython3 = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable Python 3 provider";
+    };
+
+    withNodeJs = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable Node provider";
+    };
+
+    withRuby = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable Ruby provider";
+    };
+
     alias = mkOption {
       type = types.bool;
       default = false;

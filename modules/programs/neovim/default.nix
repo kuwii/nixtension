@@ -13,18 +13,18 @@ in
 
   config = mkMerge [
     (mkIf cfg.enable {
-      programs.neovim.enable = true;
+      nixtension.config.neovim = {
+        enable = true;
+        alias = true;
+        defaultEditor = true;
 
-      programs.neovim.defaultEditor = true;
+        withPython3 = true;
+        withNodeJs = true;
+        withRuby = true;
 
-      programs.neovim.withPython3 = true;
-      programs.neovim.withNodeJs = true;
-      programs.neovim.withRuby = true;
-
-      nixtension.config.neovim.alias = true;
-
-      nixtension.config.neovim.plugins = cfg.plugins;
-      nixtension.config.neovim.vimrc = "lua << EOF\n" + initLua + "\nEOF\n" + initVim;
+        plugins = cfg.plugins;
+        vimrc = "lua << EOF\n" + initLua + "\nEOF\n" + initVim;
+      };
 
       nixtension.config.packages = with pkgs; [
         xclip wl-clipboard
