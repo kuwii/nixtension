@@ -9,6 +9,8 @@ The channel is built based on NixOS unstable channel.
 
 ## Installation
 
+### NixOS
+
 Add Nixtension channel and update
 
 ```
@@ -26,3 +28,21 @@ imports = [
 ```
 
 Then the Nixtension configuration and packages will be available.
+
+### Home Manager
+
+Add Nixtension channel and update
+
+```
+nix-channel --add https://github.com/kuwii/nixtension/archive/main.tar.gz nixtension
+nix-channel --update
+```
+
+After that, update configuration at `~/.config/home-manager/home.nix`, importing the channel:
+
+```
+imports = [
+  ... # your existing imports
+  <nixtension/home.nix>
+]
+```
