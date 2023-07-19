@@ -15,5 +15,18 @@ in
       default = "horizontal";
       description = "Where to pop-up terminal. Can be `vertical`, `horizontal`, `tab`, `float`.";
     };
+
+    keymap = {
+      toggle = mkOption {
+        type = types.str;
+        default = "<c-\\>";
+        description = "Shortcut to show/hide terminal panel.";
+      };
+      unfocus = mkOption {
+        type = types.str;
+        default = "<c-t>";
+        description = "Shortcut to focus back to vim.";
+      };
+    };
   };
 }

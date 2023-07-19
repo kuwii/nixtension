@@ -10,5 +10,13 @@ in
       default = true;
       description = "Install plugins that provide file explorer feature.";
     };
+
+    keymap = {
+      toggle = mkOption {
+        type = types.str;
+        default = "<space>e";
+        description = "Shortcut to open/close file explorer";
+      };
+    };
   };
 }

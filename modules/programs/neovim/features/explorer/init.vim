@@ -1,1 +1,1 @@
-nnoremap <space>e <Cmd>NvimTreeToggle<CR>
+nnoremap __TOGGLE__ <Cmd>NvimTreeToggle<CR>

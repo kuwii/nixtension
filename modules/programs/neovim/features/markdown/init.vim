@@ -8,6 +8,4 @@ let g:mkdp_echo_preview_url = 1
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
 
-nmap <space>p <Plug>MarkdownPreviewToggle
-nmap <space>PS <Plug>MarkdownPreview
-nmap <space>PE <Plug>MarkdownPreview
+nmap __TOGGLE__ <Plug>MarkdownPreviewToggle
