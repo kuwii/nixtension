@@ -34,7 +34,7 @@ in
     # basic features
     (mkIf (cfg.enable && cfg.basic-settings.enable) (import ./features/basic-settings { }))
     (mkIf (cfg.enable && cfg.explorer.enable) (import ./features/explorer { inherit config lib pkgs; }))
-    (mkIf (cfg.enable && cfg.git.enable) (import ./features/git { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.git.enable) (import ./features/git { inherit config lib pkgs; }))
     (mkIf (cfg.enable && cfg.status-bar.enable) (import ./features/status-bar { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.current-word.enable) (import ./features/current-word { inherit config pkgs; }))
     (mkIf (cfg.enable && cfg.fuzzy-finder.enable) (import ./features/fuzzy-finder { inherit config lib pkgs; }))
