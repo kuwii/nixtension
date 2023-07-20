@@ -14,8 +14,13 @@ in
     keymap = {
       toggle = mkOption {
         type = types.str;
-        default = "<space>e";
+        default = "<space>E";
         description = "Shortcut to open/close file explorer";
+      };
+      focus = mkOption {
+        type = types.str;
+        default = "<space>e";
+        description = "Shortcut to focus on file explorer";
       };
     };
   };

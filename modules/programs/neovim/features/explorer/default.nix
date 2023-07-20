@@ -4,9 +4,9 @@ let
   cfg = config.nixtension.programs.neovim.explorer;
   keymap = cfg.keymap;
   withConfig = builtins.replaceStrings [
-    "__TOGGLE__"
+    "__TOGGLE__" "__FOCUS__"
   ] [
-    keymap.toggle
+    keymap.toggle keymap.focus
   ];
 in
 lib.mkMerge [
