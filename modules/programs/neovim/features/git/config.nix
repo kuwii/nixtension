@@ -37,6 +37,38 @@ in
         default = "<space>gb";
         description = "Shortcut to toggle git blame.";
       };
+      toggle-delete = mkOption {
+        type = types.str;
+        default = "<space>gd";
+        description = "Shortcut to toggle git blame.";
+      };
+
+      hunk-preview = mkOption {
+        type = types.str;
+        default = "<space>gp";
+        description = "Shortcut to preview hunk at current position.";
+      };
+      hunk-inline = mkOption {
+        type = types.str;
+        default = "<space>gi";
+        description = "Shortcut to preview hunk at current position inline.";
+      };
+      hunk-previous = mkOption {
+        type = types.str;
+        default = "<space>gj";
+        description = "Shortcut to jump to previous hunk in the current buffer.";
+      };
+      hunk-next = mkOption {
+        type = types.str;
+        default = "<space>gk";
+        description = "Shortcut to jump to next hunk in the current buffer.";
+      };
+
+      diff = mkOption {
+        type = types.str;
+        default = "<space>gc";
+        description = "Shortcut to perform a vimdiff on current file.";
+      };
     };
   };
 }
