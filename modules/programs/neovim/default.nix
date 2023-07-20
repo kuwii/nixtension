@@ -44,5 +44,6 @@ in
     (mkIf (cfg.enable && cfg.nvim-lspconfig.enable) (import ./features/nvim-lspconfig { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix-support { inherit lib pkgs; }))
     (mkIf (cfg.enable && cfg.lua-support.enable) (import ./features/lua-support { inherit lib pkgs; }))
+    (mkIf (cfg.enable && cfg.bash-support.enable) (import ./features/bash-support { inherit lib pkgs; }))
   ];
 }

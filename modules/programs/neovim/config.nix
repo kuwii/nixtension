@@ -19,6 +19,7 @@ in
     ./features/nvim-lspconfig/config.nix
     ./features/lua-support/config.nix
     ./features/nix-support/config.nix
+    ./features/bash-support/config.nix
   ];
 
   options.nixtension.programs.neovim = {

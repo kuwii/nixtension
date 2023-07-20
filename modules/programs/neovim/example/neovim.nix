@@ -65,6 +65,7 @@
   nixtension.programs.neovim.nvim-lspconfig.enable = true;
   nixtension.programs.neovim.lua-support.enable = true;
   nixtension.programs.neovim.nix-support.enable = true;
+  nixtension.programs.neovim.bash-support.enable = true;
 
   # Add any other plugins & configurations here
   nixtension.programs.neovim.plugins = with pkgs.vimPlugins; [
