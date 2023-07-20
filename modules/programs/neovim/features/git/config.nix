@@ -55,12 +55,12 @@ in
       };
       hunk-previous = mkOption {
         type = types.str;
-        default = "<space>gj";
+        default = "<space>gk";
         description = "Shortcut to jump to previous hunk in the current buffer.";
       };
       hunk-next = mkOption {
         type = types.str;
-        default = "<space>gk";
+        default = "<space>gj";
         description = "Shortcut to jump to next hunk in the current buffer.";
       };
 
