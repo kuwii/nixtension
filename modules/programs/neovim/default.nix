@@ -40,6 +40,7 @@ in
     (mkIf (cfg.enable && cfg.fuzzy-finder.enable) (import ./features/fuzzy-finder { inherit config lib pkgs; }))
     (mkIf (cfg.enable && cfg.terminal.enable) (import ./features/terminal { inherit config lib pkgs; }))
     (mkIf (cfg.enable && cfg.markdown.enable) (import ./features/markdown { inherit config lib pkgs; }))
+    (mkIf (cfg.enable && cfg.diagnostic.enable) (import ./features/diagnostic { inherit config lib pkgs; }))
     # language supports
     (mkIf (cfg.enable && cfg.nvim-lspconfig.enable) (import ./features/nvim-lspconfig { inherit pkgs; }))
     (mkIf (cfg.enable && cfg.nix-support.enable) (import ./features/nix-support { inherit lib pkgs; }))
