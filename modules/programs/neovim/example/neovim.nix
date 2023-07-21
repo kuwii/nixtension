@@ -2,6 +2,7 @@
 
 {
   # Enable Neovim
+  # Belows are default configurations and can be used as a template.
   nixtension.programs.neovim.enable = true;
 
   # Some recommended basic settings
