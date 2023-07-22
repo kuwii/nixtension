@@ -2,28 +2,30 @@
 
 let
   cfg = config.nixtension.system.kvm;
-  inherit (lib) mkIf mkMerge mkOption types;
+  inherit (lib) mkIf mkMerge;
 in
 {
-  options.nixtension.system.kvm = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Nixtension KVM support, including QEMU, libvirtd, virt-manager and other utils.";
-    };
-  };
+  imports = [
+    ./config.nix
+  ];
 
-  config = (mkIf cfg.enable {
-    virtualisation.libvirtd.enable = true;
-    virtualisation.libvirtd.qemu.swtpm.enable = true;
-    virtualisation.libvirtd.qemu.ovmf.enable = true;
-    virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
-    services.spice-vdagentd.enable = true;
+  config = mkMerge [
+    (mkIf cfg.enable {
+      virtualisation.libvirtd.enable = true;
+      virtualisation.libvirtd.qemu.swtpm.enable = true;
+      virtualisation.libvirtd.qemu.ovmf.enable = true;
+      virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
+      services.spice-vdagentd.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      virt-manager virt-viewer
-      spice spice-gtk spice-protocol
-      win-virtio win-spice
-    ];
-  });
+      environment.systemPackages = with pkgs; [
+        virt-manager virt-viewer
+        spice spice-gtk spice-protocol
+      ];
+    })
+    (mkIf (cfg.enable && cfg.windows-guest-support.enable) {
+      environment.systemPackages = with pkgs; [
+        looking-glass-client win-virtio win-spice
+      ];
+    })
+  ];
 }
