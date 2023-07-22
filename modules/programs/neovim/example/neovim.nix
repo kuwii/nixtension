@@ -68,6 +68,20 @@
   nixtension.programs.neovim.nix-support.enable = true;
   nixtension.programs.neovim.bash-support.enable = true;
 
+  # Diagnostic feature
+  nixtension.programs.neovim.diagnostic.enable = true;
+  nixtension.programs.neovim.diagnostic.keymap = {
+    toggle = "<space>de";
+    refresh = "<space>dR";
+    open-document = "<space>do";
+    open-workspace = "<space>dw";
+    open-quickfix = "<space>df";
+    open-loclist = "<space>dl";
+    open-references = "<space>dr";
+    open-definitions = "<space>dd";
+    open-type-references = "<space>dt";
+  };
+
   # Add any other plugins & configurations here
   nixtension.programs.neovim.plugins = with pkgs.vimPlugins; [
     # block-nvim

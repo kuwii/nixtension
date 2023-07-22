@@ -14,7 +14,7 @@ in
     keymap = {
       toggle = mkOption {
         type = types.str;
-        default = "<space>dd";
+        default = "<space>de";
         description = "Shortcut to toggle diagnostic.";
       };
       refresh = mkOption {
