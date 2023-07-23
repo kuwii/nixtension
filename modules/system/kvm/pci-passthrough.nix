@@ -1,6 +1,7 @@
 { kvm-config, lib, pkgs, ... }:
 
 let
+  username = kvm-config.user;
   cfg = kvm-config.pci-passthrough;
   cpu-type = cfg.cpu-type;
   inherit (lib) mkMerge mkIf;
@@ -12,6 +13,12 @@ mkMerge [
     ];
     boot.kernelParams = [
       "iommu=pt"
+    ];
+    environment.systemPackages = with pkgs; [
+      looking-glass-client
+    ];
+    systemd.tmpfiles.rules = [
+      "f /dev/shm/looking-glass 0660 ${username} qemu-libvirtd -"
     ];
   })
   (mkIf (cfg.enable && cfg.cpu-type == "intel") {

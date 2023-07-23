@@ -24,7 +24,7 @@ in
     })
     (mkIf (cfg.enable && cfg.windows-guest-support.enable) {
       environment.systemPackages = with pkgs; [
-        looking-glass-client win-virtio win-spice
+        win-virtio win-spice
       ];
     })
     (mkIf (cfg.enable && cfg.pci-passthrough.enable) (
