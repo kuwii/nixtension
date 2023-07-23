@@ -19,5 +19,19 @@ in
         description = "Enable Windows guest support, installing necessary dependencies.";
       };
     };
+
+    pci-passthrough = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable PCI passthrough for KVM.";
+      };
+
+      cpu-type = mkOption {
+        type = types.str;
+        default = "unknown";
+        description = "intel | amd";
+      };
+    };
   };
 }

@@ -27,5 +27,8 @@ in
         looking-glass-client win-virtio win-spice
       ];
     })
+    (mkIf (cfg.enable && cfg.pci-passthrough.enable) (
+      import ./pci-passthrough.nix { kvm-config = cfg; inherit lib pkgs; }
+    ))
   ];
 }
