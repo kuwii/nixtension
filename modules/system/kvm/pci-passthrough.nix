@@ -18,7 +18,7 @@ mkMerge [
       looking-glass-client
     ];
     systemd.tmpfiles.rules = [
-      "f /dev/shm/looking-glass 0660 ${username} qemu-libvirtd -"
+      "f /dev/shm/looking-glass 0660 ${username} libvirtd -"
     ];
   })
   (mkIf (cfg.enable && cfg.cpu-type == "intel") {
