@@ -17,6 +17,7 @@ in
     environment.systemPackages = with pkgs; [
       dmidecode pciutils hwinfo
       parted gparted
+      lshw glxinfo
     ];
   });
 }
