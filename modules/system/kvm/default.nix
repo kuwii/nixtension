@@ -17,6 +17,7 @@ in
       virtualisation.libvirtd.qemu.ovmf.packages = [ pkgs.OVMFFull.fd ];
       services.spice-vdagentd.enable = true;
 
+      programs.dconf.enable = true;
       environment.systemPackages = with pkgs; [
         virt-manager virt-viewer
         spice spice-gtk spice-protocol
