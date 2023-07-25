@@ -15,8 +15,11 @@ in
 
   config = mkMerge [
     (mkIf cfg.enable {
+      nixtension.config.git.enable = true;
+      nixtension.config.git.lfs.enable = true;
+      nixtension.config.git.delta.enable = true;
       nixtension.config.packages = with pkgs; [
-        git lazygit
+        lazygit
       ];
     })
   ];
