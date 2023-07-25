@@ -20,10 +20,10 @@ in
       feh
       wget curl nettools
       rsync
-      git
       nixos-option
       neofetch
       tree
     ];
+    nixtension.programs.git.enable = true;
   });
 }

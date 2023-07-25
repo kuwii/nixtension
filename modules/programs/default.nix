@@ -3,6 +3,7 @@
 {
   imports = [
     ./compression-software
+    ./git
     ./joplin
     ./neovim
   ];
