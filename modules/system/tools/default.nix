@@ -16,6 +16,8 @@ in
   config = (mkIf cfg.enable {
     nixtension.programs.git.enable = true;
     nixtension.programs.system-tools.enable = true;
+    nixtension.programs.hardware-tools.enable = true;
+
     networking.networkmanager.enable = true;
     environment.systemPackages = with pkgs; [
       nixos-option
