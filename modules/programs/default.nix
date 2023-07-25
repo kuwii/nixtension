@@ -4,7 +4,9 @@
   imports = [
     ./compression-software
     ./git
+    ./hardware-tools
     ./joplin
     ./neovim
+    ./system-tools
   ];
 }

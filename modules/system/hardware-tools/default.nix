@@ -14,10 +14,6 @@ in
   };
 
   config = (mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      dmidecode pciutils hwinfo
-      parted gparted
-      lshw glxinfo inxi
-    ];
+    nixtension.programs.hardware-tools.enable = true;
   });
 }

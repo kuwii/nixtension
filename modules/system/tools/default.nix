@@ -14,16 +14,11 @@ in
   };
 
   config = (mkIf cfg.enable {
+    nixtension.programs.git.enable = true;
+    nixtension.programs.system-tools.enable = true;
     networking.networkmanager.enable = true;
     environment.systemPackages = with pkgs; [
-      binutils
-      feh
-      wget curl nettools
-      rsync
       nixos-option
-      neofetch
-      tree
     ];
-    nixtension.programs.git.enable = true;
   });
 }
