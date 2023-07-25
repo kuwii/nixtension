@@ -13,6 +13,7 @@
     ./sound
     ./tools
     ./windows-time
+    ./user
     ./zsh
   ];
 }

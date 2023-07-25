@@ -2,6 +2,7 @@
 
 let
   cfg = config.nixtension.system.kvm;
+  username = config.nixtension.system.username;
   inherit (lib) mkIf mkMerge;
 in
 {
@@ -27,6 +28,9 @@ in
       environment.systemPackages = with pkgs; [
         looking-glass-client win-virtio win-spice
       ];
+    })
+    (mkIf (cfg.enable && username != "") {
+      users.users.${username}.extraGroups = [ "libvirtd" ];
     })
   ];
 }
