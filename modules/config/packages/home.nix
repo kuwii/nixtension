@@ -4,7 +4,7 @@ let
   cfg = config.nixtension.config.packages;
 in
 {
-  imports = [ ./config.nix ];
+  imports = [ ./options.nix ];
 
   config = {
     home.packages = cfg;

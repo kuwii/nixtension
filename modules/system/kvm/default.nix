@@ -6,7 +6,7 @@ let
 in
 {
   imports = [
-    ./config.nix
+    ./options.nix
   ];
 
   config = mkMerge [

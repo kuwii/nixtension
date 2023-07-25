@@ -4,7 +4,7 @@ let
   cfg = config.nixtension.config.fonts;
 in
 {
-  imports = [ ./config.nix ];
+  imports = [ ./options.nix ];
 
   config = {
     fonts.fonts = cfg;

@@ -5,7 +5,7 @@ let
   inherit (lib) mkIf mkMerge;
 in
 {
-  imports = [ ./config.nix ];
+  imports = [ ./options.nix ];
 
   config = mkMerge [
     (mkIf cfg.enable {

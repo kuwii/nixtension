@@ -7,20 +7,20 @@ in
 {
   imports = [
     # basic features
-    ./features/basic-settings/config.nix
-    ./features/status-bar/config.nix
-    ./features/explorer/config.nix
-    ./features/git/config.nix
-    ./features/fuzzy-finder/config.nix
-    ./features/terminal/config.nix
-    ./features/current-word/config.nix
-    ./features/markdown/config.nix
-    ./features/diagnostic/config.nix
+    ./features/basic-settings/options.nix
+    ./features/status-bar/options.nix
+    ./features/explorer/options.nix
+    ./features/git/options.nix
+    ./features/fuzzy-finder/options.nix
+    ./features/terminal/options.nix
+    ./features/current-word/options.nix
+    ./features/markdown/options.nix
+    ./features/diagnostic/options.nix
     # language supports
-    ./features/nvim-lspconfig/config.nix
-    ./features/lua-support/config.nix
-    ./features/nix-support/config.nix
-    ./features/bash-support/config.nix
+    ./features/nvim-lspconfig/options.nix
+    ./features/lua-support/options.nix
+    ./features/nix-support/options.nix
+    ./features/bash-support/options.nix
   ];
 
   options.nixtension.programs.neovim = {
