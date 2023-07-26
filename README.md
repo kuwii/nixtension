@@ -11,9 +11,10 @@ The channel is built based on NixOS unstable channel.
 
 ### NixOS
 
-Add Nixtension channel and update
+Add Nixtension and Home Manager channel and update
 
 ```
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 sudo nix-channel --add https://github.com/kuwii/nixtension/archive/main.tar.gz nixtension
 sudo nix-channel --update
 ```

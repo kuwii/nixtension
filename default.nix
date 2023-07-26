@@ -2,6 +2,7 @@
 
 {
   imports = [
+    <home-manager/nixos>
     ./packages
     ./modules
   ];
