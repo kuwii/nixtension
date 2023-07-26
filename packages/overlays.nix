@@ -1,3 +1,5 @@
 [(final: prev: {
-  nixtension = { };
+  nixtension = {
+    polkit-kde-agent-runner = prev.callPackage (import ./polkit-kde-agent-runner) {};
+  };
 })]
