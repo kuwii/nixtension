@@ -10,13 +10,14 @@ in
   ];
 
   config = mkMerge [
+    (mkIf (cfg.enable) (import ./network.nix { inherit pkgs; }))
+    (mkIf (cfg.enable) (import ./polkit.nix { inherit pkgs; }))
+    (mkIf (cfg.enable && cfg.sddm.enable) (import ./sddm.nix { inherit pkgs; }))
     (mkIf cfg.enable {
-      networking.networkmanager.enable = true;
       hardware.bluetooth.enable = true;
 
       services.xserver.enable = true;
       services.pipewire.enable = true;
-      security.polkit.enable = true;
 
       programs.hyprland.enable = true;
       programs.hyprland.xwayland.enable = true;
@@ -31,21 +32,13 @@ in
         kitty
         # notification daemon
         dunst libnotify
-        # authentication agent
-        libsForQt5.polkit-kde-agent nixtension.polkit-kde-agent-runner
         # qt wayland support
         libsForQt5.qt5.qtwayland qt6.qtwayland
-        # network manager
-        networkmanagerapplet
         # application launcher
         wofi
         # x compatibility
         xorg.xhost
       ];
-    })
-    (mkIf cfg.sddm.enable {
-      services.xserver.displayManager.sddm.enable = true;
-      services.xserver.displayManager.sddm.enableHidpi = true;
     })
   ];
 }
