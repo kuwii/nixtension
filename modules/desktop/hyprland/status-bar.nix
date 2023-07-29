@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    waybar
+    nixtension.waybar-hyprland
   ];
 }
