@@ -10,6 +10,7 @@
     ./kvm-guest
     ./openssh
     ./pinyin
+    ./sddm
     ./sound
     ./tools
     ./windows-time

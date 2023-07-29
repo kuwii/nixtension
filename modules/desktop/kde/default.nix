@@ -47,9 +47,7 @@ in
       ];
     })
     (mkIf cfg.sddm.enable {
-      services.xserver.enable = true;
-      services.xserver.displayManager.sddm.enable = true;
-      services.xserver.displayManager.sddm.enableHidpi = true;
+      nixtension.system.sddm.enable = true;
     })
   ];
 }
