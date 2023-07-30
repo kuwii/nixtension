@@ -1,7 +1,6 @@
 { pkgs }:
 
 {
-  environment.systemPackages = with pkgs; [
-    nixtension.waybar-hyprland
-  ];
+  programs.waybar.enable = true;
+  programs.waybar.package = pkgs.nixtension.waybar-hyprland;
 }
