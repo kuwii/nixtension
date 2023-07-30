@@ -13,6 +13,7 @@ in
     (mkIf (cfg.enable) (import ./system.nix { inherit lib pkgs; }))
     (mkIf (cfg.enable) (import ./must-have.nix { inherit lib pkgs; }))
     (mkIf (cfg.enable) (import ./status-bar.nix { inherit pkgs; }))
+    (mkIf (cfg.enable) (import ./wallpaper.nix { inherit pkgs; }))
     (mkIf cfg.enable {
 
       programs.hyprland.enable = true;
