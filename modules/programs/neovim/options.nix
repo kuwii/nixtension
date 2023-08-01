@@ -16,6 +16,7 @@ in
     ./features/current-word/options.nix
     ./features/markdown/options.nix
     ./features/diagnostic/options.nix
+    ./features/debug/options.nix
     # language supports
     ./features/nvim-lspconfig/options.nix
     ./features/lua-support/options.nix
