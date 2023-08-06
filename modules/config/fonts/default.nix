@@ -7,6 +7,6 @@ in
   imports = [ ./options.nix ];
 
   config = {
-    fonts.fonts = cfg;
+    fonts.packages = cfg;
   };
 }

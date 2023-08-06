@@ -103,67 +103,67 @@ in
 
   config = mkMerge [
     (mkIf (cfg.enable && cfg.arphic.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         arphic-ukai arphic-uming
       ];
     })
 
     (mkIf (cfg.enable && cfg.cascadia-code.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         cascadia-code
       ];
     })
 
     (mkIf (cfg.enable && cfg.dejavu-fonts.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         dejavu_fonts
       ];
     })
 
     (mkIf (cfg.enable && cfg.freefont.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         freefont_ttf
       ];
     })
 
     (mkIf (cfg.enable && cfg.hack.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         hack-font
       ];
     })
 
     (mkIf (cfg.enable && cfg.ipafont.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         ipafont
       ];
     })
 
     (mkIf (cfg.enable && cfg.nerdfonts.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         nerdfonts
       ];
     })
 
     (mkIf (cfg.enable && cfg.noto-fonts.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji
       ];
     })
 
     (mkIf (cfg.enable && cfg.source-code-pro.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         source-code-pro
       ];
     })
 
     (mkIf (cfg.enable && cfg.source-han.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         source-han-sans source-han-mono source-han-serif
       ];
     })
 
     (mkIf (cfg.enable && cfg.wqy.enable) {
-      fonts.fonts = with pkgs; [
+      nixtension.config.fonts = with pkgs; [
         wqy_zenhei wqy_microhei
       ];
     })
