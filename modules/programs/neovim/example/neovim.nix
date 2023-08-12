@@ -8,6 +8,10 @@
   # Some recommended basic settings
   nixtension.programs.neovim.basic-settings.enable = true;
 
+  # Scrollbar feature
+  # Based on nvim-scrollbar
+  nixtension.programs.neovim.scrollbar.enable = true;
+
   # Status bar feature
   # Based on vim-airline & vim-airline-clock
   nixtension.programs.neovim.status-bar.enable = true;

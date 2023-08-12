@@ -8,6 +8,7 @@ in
   imports = [
     # basic features
     ./features/basic-settings/options.nix
+    ./features/scrollbar/options.nix
     ./features/status-bar/options.nix
     ./features/explorer/options.nix
     ./features/git/options.nix
