@@ -8,5 +8,6 @@
     ./joplin
     ./neovim
     ./system-tools
+    ./toys
   ];
 }
