@@ -17,8 +17,8 @@ in
     (mkIf cfg.enable {
       nixtension.config.packages = with pkgs; [
         fortune
-        cowsay neo-cowsay ponysay pokemonsay
-        cmatrix tmatrix
+        neo-cowsay ponysay pokemonsay
+        cmatrix tmatrix neo
         asciiquarium
         pipes
         aalib
