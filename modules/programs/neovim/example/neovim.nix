@@ -21,6 +21,7 @@
   nixtension.programs.neovim.explorer.enable = true;
   nixtension.programs.neovim.explorer.keymap = {
     toggle = "<space>e";
+    focus = "<space>E";
   };
 
   # Git feature
