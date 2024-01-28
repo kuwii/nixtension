@@ -6,7 +6,7 @@ lib.mkMerge [
   })
   {
     nixtension.config.packages = with pkgs; [
-      rnix-lsp
+      nixd
     ];
   }
 ]
