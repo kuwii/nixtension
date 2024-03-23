@@ -6,5 +6,6 @@
     ./fonts
     ./git
     ./neovim
+    ./zsh
   ];
 }

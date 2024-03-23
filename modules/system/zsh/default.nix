@@ -22,34 +22,23 @@ in
 
   config = mkMerge [
     (mkIf cfg.enable {
-      programs.zsh.enable = true;
+      nixtension.config.zsh.enable = true;
+      nixtension.config.zsh.completion.enable = true;
+      nixtension.config.zsh.vte-integration.enable = true;
+      nixtension.config.zsh.autosuggestions.enable = true;
+      nixtension.config.zsh.oh-my-zsh.enable = true;
 
-      programs.zsh.enableCompletion = true;
-      programs.zsh.enableBashCompletion = true;
-      programs.zsh.enableGlobalCompInit = true;
-
-      programs.zsh.autosuggestions.enable = true;
-      programs.zsh.autosuggestions.async = true;
-      programs.zsh.autosuggestions.strategy = ["history" "completion"];
-
-      programs.zsh.ohMyZsh.enable = true;
-      programs.zsh.ohMyZsh.theme = "ys";
-      programs.zsh.ohMyZsh.plugins = [
-        "man" "git" "rsync"
-      ];
-
-      users.defaultUserShell = pkgs.zsh;
-      environment.systemPackages = with pkgs; [
+      nixtension.config.packages = with pkgs; [
         fzf
       ];
     })
-    (mkIf (cfg.enable && cfg.vi-mode.enable) {
-      programs.zsh.ohMyZsh.plugins = [ "vi-mode" ];
-      programs.zsh.setOptions = [ "VI" ];
-      programs.zsh.interactiveShellInit = ''
-        export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true;
-        export VI_MODE_SET_CURSOR=true;
-      '';
-    })
+    # (mkIf (cfg.enable && cfg.vi-mode.enable) {
+    #   programs.zsh.ohMyZsh.plugins = [ "vi-mode" ];
+    #   programs.zsh.setOptions = [ "VI" ];
+    #   programs.zsh.interactiveShellInit = ''
+    #     export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true;
+    #     export VI_MODE_SET_CURSOR=true;
+    #   '';
+    # })
   ];
 }
