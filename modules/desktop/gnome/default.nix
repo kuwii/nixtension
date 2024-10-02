@@ -5,6 +5,10 @@ let
   inherit (lib) mkIf mkMerge mkOption types;
 in
 {
+  imports = [
+    ../common
+  ];
+
   options.nixtension.desktop.gnome = {
     enable = mkOption {
       type = types.bool;
@@ -32,12 +36,7 @@ in
       # enable gnome
       services.xserver.enable = true;
       services.xserver.desktopManager.gnome.enable = true;
-      # setup touchpad
-      services.xserver.libinput.enable = true;
-      services.xserver.libinput.touchpad.tapping = true;
       # install some useful packages & extensions
-      programs.dconf.enable = true;
-      programs.xwayland.enable = true;
       services.dbus.packages = with pkgs; [
         gnome2.GConf
       ];
