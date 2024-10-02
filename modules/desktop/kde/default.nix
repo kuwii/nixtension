@@ -24,11 +24,11 @@ in
     (mkIf cfg.enable {
       # enable gnome
       services.xserver.enable = true;
-      services.xserver.desktopManager.plasma5.enable = true;
+      services.desktopManager.plasma6.enable = true;
       services.xserver.desktopManager.plasma5.useQtScaling = true;
       # setup touchpad
-      services.xserver.libinput.enable = true;
-      services.xserver.libinput.touchpad.tapping = true;
+      services.libinput.enable = true;
+      services.libinput.touchpad.tapping = true;
       # enable some useful features
       hardware.bluetooth.enable = true;
       networking.networkmanager.enable = true;
@@ -36,18 +36,11 @@ in
       programs.xwayland.enable = true;
       # install some useful packages & extensions
       environment.systemPackages = with pkgs; [
-        libsForQt5.ark
-        libsForQt5.discover
-        libsForQt5.kamoso
-        libsForQt5.kate
-        libsForQt5.krdc
-        libsForQt5.bismuth
-        libsForQt5.nota
-        partition-manager
+        kdePackages.partitionmanager
       ];
     })
     (mkIf cfg.sddm.enable {
-      nixtension.system.sddm.enable = true;
+      services.displayManager.sddm.enable = true;
     })
   ];
 }
