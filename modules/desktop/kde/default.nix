@@ -22,6 +22,13 @@ in
         description = "Install and enable SDDM display manager.";
       };
     };
+    high-dpi = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Enable high DPI mode.";
+      };
+    };
   };
 
   config = mkMerge [
@@ -34,6 +41,7 @@ in
     })
     (mkIf cfg.sddm.enable {
       services.displayManager.sddm.enable = true;
+      services.displayManager.sddm.enableHidpi = cfg.high-dpi.enable;
     })
   ];
 }
