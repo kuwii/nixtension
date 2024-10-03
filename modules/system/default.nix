@@ -6,6 +6,7 @@
     ./clash
     ./cn-support
     ./font
+    ./mihomo
     ./kvm
     ./kvm-guest
     ./openssh

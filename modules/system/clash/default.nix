@@ -26,20 +26,9 @@ in
   };
 
   config = (mkIf cfg.enable {
-    # install clash
-    environment.systemPackages = with pkgs; [
-      clash
-    ];
-    # setup systemd service
-    systemd.services.clash = {
-      enable = cfg.auto-start.enable;
-      after = [ "network.target" ];
-      wantedBy = [ "multi-user.target" ];
-      description = "Clash service.";
-      script = "${pkgs.clash}/bin/clash -d ${cfg.config-dir}";
-      serviceConfig = {
-        Type = "simple";
-      };
-    };
+    assertions = [{
+      assertion = false;
+      message = "'clash' has been deprecated. Please use 'nixtension.system.mihomo' instead.";
+    }];
   });
 }
