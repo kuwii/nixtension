@@ -21,7 +21,7 @@ in
         feh
         wget curl nettools
         rsync
-        neofetch
+        fastfetch
         tree
       ];
     })
