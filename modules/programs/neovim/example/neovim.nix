@@ -90,13 +90,6 @@
   nixtension.programs.neovim.diagnostic.keymap = {
     toggle = "<space>de";
     refresh = "<space>dR";
-    open-document = "<space>do";
-    open-workspace = "<space>dw";
-    open-quickfix = "<space>df";
-    open-loclist = "<space>dl";
-    open-references = "<space>dr";
-    open-definitions = "<space>dd";
-    open-type-references = "<space>dt";
   };
 
   # Add any other plugins & configurations here
