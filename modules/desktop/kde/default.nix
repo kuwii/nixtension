@@ -37,6 +37,7 @@ in
       # install some useful packages & extensions
       environment.systemPackages = with pkgs; [
         kdePackages.partitionmanager
+        polonium
       ];
     })
     (mkIf cfg.sddm.enable {
