@@ -21,6 +21,13 @@ in
         default = false;
         description = "Install and enable SDDM display manager.";
       };
+      wayland = {
+        enable = mkOption {
+          type = types.bool;
+          default = true;
+          description = "Enable Wayland for SDDM.";
+        };
+      };
     };
     high-dpi = {
       enable = mkOption {
@@ -41,8 +48,11 @@ in
       ];
     })
     (mkIf cfg.sddm.enable {
-      services.displayManager.sddm.enable = true;
-      services.displayManager.sddm.enableHidpi = cfg.high-dpi.enable;
+      services.displayManager.sddm = {
+        enable = true;
+        enableHidpi = cfg.high-dpi.enable;
+        wayland.enable = cfg.sddm.wayland.enable;
+      };
     })
   ];
 }
