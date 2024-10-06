@@ -43,6 +43,12 @@ in
       services.desktopManager.plasma6.enable = true;
       # install some useful packages & extensions
       environment.systemPackages = with pkgs; [
+        kdePackages.ark
+        kdePackages.kcalc
+        kdePackages.kcharselect
+        kdePackages.khelpcenter
+        kdePackages.ksystemlog
+        kdePackages.kolourpaint
         kdePackages.partitionmanager
         polonium
       ];
