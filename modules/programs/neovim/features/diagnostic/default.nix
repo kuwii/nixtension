@@ -19,8 +19,6 @@ lib.mkMerge [
     init-lua = withConfig (builtins.readFile ./init.lua);
   })
   ({
-    nixtension.config.fonts = with pkgs; [
-      nerdfonts
-    ];
+    nixtension.config.nerd-fonts.enable = true;
   })
 ]

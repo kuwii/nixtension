@@ -139,9 +139,7 @@ in
     })
 
     (mkIf (cfg.enable && cfg.nerdfonts.enable) {
-      nixtension.config.fonts = with pkgs; [
-        nerdfonts
-      ];
+      nixtension.config.nerd-fonts.enable = true;
     })
 
     (mkIf (cfg.enable && cfg.noto-fonts.enable) {
