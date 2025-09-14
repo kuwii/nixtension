@@ -25,9 +25,9 @@ in
         description = "Use GNU GRUB as bootloader, instead of systemd-boot.";
       };
     };
-    mountPoint = mkOption {
+    mount-point = mkOption {
       type = types.str;
-      default = "/boot/efi";
+      default = "/boot";
       description = "Location of the mounted EFI partition.";
     };
   };
@@ -39,7 +39,7 @@ in
     (mkIf (cfg.enable && !cfg.grub.enable) {
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
-      boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
+      boot.loader.efi.efiSysMountPoint = cfg.mount-point;
     })
     (mkIf (cfg.enable && cfg.grub.enable) {
       boot.loader.grub.enable = true;
@@ -47,7 +47,7 @@ in
       boot.loader.grub.device = "nodev";
       boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.grub.enableCryptodisk = true;
-      boot.loader.efi.efiSysMountPoint = cfg.mountPoint;
+      boot.loader.efi.efiSysMountPoint = cfg.mount-point;
     })
     (mkIf (cfg.enable && cfg.bootscreen.enable) {
       boot.plymouth.enable = true;
