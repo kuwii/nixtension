@@ -6,9 +6,10 @@
     ./clash
     ./cn-support
     ./font
-    ./mihomo
+    ./hostname
     ./kvm
     ./kvm-guest
+    ./mihomo
     ./openssh
     ./pinyin
     ./sddm
