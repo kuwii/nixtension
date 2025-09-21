@@ -15,6 +15,7 @@
     ./sound
     ./tools
     ./windows-time
+    ./usb-drive
     ./user
     ./zsh
   ];
