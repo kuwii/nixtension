@@ -39,6 +39,9 @@ in
   };
 
   config = mkMerge [
+    (mkIf (cfg.enable || cfg.sddm.enable) {
+      services.xserver.enable = true;
+    })
     (mkIf cfg.enable {
       services.desktopManager.plasma6.enable = true;
       # install some useful packages & extensions
