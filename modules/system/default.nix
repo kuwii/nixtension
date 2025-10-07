@@ -7,6 +7,7 @@
     ./cn-support
     ./font
     ./hostname
+    ./input
     ./kvm
     ./kvm-guest
     ./mihomo

@@ -14,8 +14,7 @@ in
   };
 
   config = (mkIf cfg.enable {
-    i18n.inputMethod.enable = true;
-    i18n.inputMethod.type = "fcitx5";
-    i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-gtk fcitx5-chinese-addons ];
+    nixtension.system.input.enable = true;
+    nixtension.system.input.chinese.enable = true;
   });
 }
