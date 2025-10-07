@@ -13,6 +13,7 @@
     ./mihomo
     ./openssh
     ./pinyin
+    ./podman
     ./sddm
     ./sound
     ./tools
