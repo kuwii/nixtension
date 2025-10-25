@@ -15,7 +15,7 @@ in
       programs.git.lfs.enable = true;
     })
     (mkIf (cfg.enable && cfg.delta.enable) {
-      programs.git.delta.enable = true;
+      programs.delta.enable = true;
     })
   ];
 }
