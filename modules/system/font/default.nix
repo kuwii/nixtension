@@ -144,7 +144,7 @@ in
 
     (mkIf (cfg.enable && cfg.noto-fonts.enable) {
       nixtension.config.fonts = with pkgs; [
-        noto-fonts noto-fonts-extra noto-fonts-cjk-sans noto-fonts-emoji
+        noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji
       ];
     })
 

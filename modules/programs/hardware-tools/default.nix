@@ -18,7 +18,7 @@ in
       nixtension.config.packages = with pkgs; [
         dmidecode pciutils hwinfo
         parted gparted
-        lshw glxinfo inxi
+        lshw mesa-demos inxi
       ];
     })
   ];
