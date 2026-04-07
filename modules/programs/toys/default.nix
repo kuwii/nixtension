@@ -24,7 +24,7 @@ in
         aalib
         cbonsai
         lavat
-        hollywood
+#        hollywood
       ];
     })
   ];
