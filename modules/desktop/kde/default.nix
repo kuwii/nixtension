@@ -57,11 +57,7 @@ in
       ];
     })
     (mkIf cfg.sddm.enable {
-      services.displayManager.sddm = {
-        enable = true;
-        enableHidpi = cfg.high-dpi.enable;
-        wayland.enable = cfg.sddm.wayland.enable;
-      };
+      services.displayManager.plasma-login-manager.enable = true;
     })
   ];
 }
