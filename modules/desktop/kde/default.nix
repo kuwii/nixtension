@@ -53,7 +53,6 @@ in
         kdePackages.ksystemlog
         kdePackages.kolourpaint
         kdePackages.partitionmanager
-        polonium
       ];
     })
     (mkIf cfg.sddm.enable {
