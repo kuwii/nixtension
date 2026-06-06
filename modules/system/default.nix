@@ -1,7 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
+    ./amd-gpu-driver
     ./boot
     ./clash
     ./cn-support

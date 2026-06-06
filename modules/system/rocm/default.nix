@@ -9,11 +9,14 @@ in
     ./options.nix
   ];
 
-  config = (mkIf (cfg.driver.enable) {
-    boot.kernelModules = [ "amdgpu" "kfd" ];
+  config = (mkIf (cfg.enable) {
+    nixtension.system.amd-gpu-driver.enable = true;
+
+    hardware.graphics.enable = true;
+    hardware.graphics.enable32Bit = true;
+    hardware.amdgpu.opencl.enable = true;
 
     nixpkgs.config.rocmSupport = true;
-    hardware.amdgpu.opencl.enable = true;
 
     environment.systemPackages = with pkgs; [
       rocmPackages.rocm-core
