@@ -49,6 +49,7 @@ in
         kdePackages.ark
         kdePackages.kcalc
         kdePackages.kcharselect
+        kdePackages.kdialog
         kdePackages.khelpcenter
         kdePackages.ksystemlog
         kdePackages.kolourpaint
