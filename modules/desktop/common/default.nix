@@ -1,13 +1,25 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
+let
+  inherit (lib) mkDefault;
+in
 {
   config = {
-      services.xserver.enable = true;
-      services.libinput.enable = true;
-      services.libinput.touchpad.tapping = true;
-      programs.dconf.enable = true;
-      programs.xwayland.enable = true;
-      hardware.bluetooth.enable = true;
-      networking.networkmanager.enable = true;
+      services.xserver.enable = mkDefault true;
+      services.xserver.xkb = {
+        layout = mkDefault "us";
+        variant = mkDefault "";
+      };
+
+      services.libinput.enable = mkDefault true;
+      services.libinput.touchpad.tapping = mkDefault true;
+
+      programs.dconf.enable = mkDefault true;
+      programs.xwayland.enable = mkDefault true;
+
+      i18n.defaultLocale = mkDefault "en_US.UTF-8";
+
+      hardware.bluetooth.enable = mkDefault true;
+      networking.networkmanager.enable = mkDefault true;
   };
 }
